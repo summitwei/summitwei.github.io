@@ -1,0 +1,3 @@
+[submodule "PuzzleJS"]
+	path = PuzzleJS
+	url = https://github.com/tabascq/PuzzleJS
