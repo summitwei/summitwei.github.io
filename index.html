@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Logical Torture</title>
+        <script type="text/javascript" src="PuzzleJS/puzzlejs/puzzle.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+        <link rel="stylesheet" href="PuzzleJS/puzzlejs/puzzle.css">
+        
+        <link rel="stylesheet" href="PuzzleJS/puzzlejs/puzzle-basic-colors.css">
+
+        <style>
+            .center {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                margin-top: 10px;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+            .overlapping {
+                display: grid;
+            }
+            .overlapping > * { grid-area: 1 / 1 / 1 / 1; }
+            .overlapping .cell::before { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        </style>
+    </head>
+
+    <body>
+        <div class="overlapping">
+            <div
+            class="puzzle-entry"
+            data-text="8x8"
+            data-mode="notext"
+            data-no-input="true"
+            data-fill-classes="white red yellow blue violet"
+            data-show-commands="true">
+                {
+                    "data-fills": [
+                        "...4....",
+                        ".1......",
+                        "..2..4.1",
+                        "........",
+                        "2.....3.",
+                        "...2....",
+                        ".4.3...3",
+                        ".......3"
+                    ]
+                }
+            </div>
+            <div
+            id="puzzle-grid"
+            class="puzzle-entry"
+            data-mode="notext"
+            data-path-style="straight"
+            data-drag-draw-path="false"
+            data-drag-paint-fill="true"
+            data-unselectable-givens="true"
+            data-fill-classes="none black green"
+            data-show-commands="true">
+                {
+                    "data-text": [
+                        "...2....",
+                        ".2......",
+                        "..4..2.3",
+                        "........",
+                        "3.....2.",
+                        "...4....",
+                        ".3.2...4",
+                        ".......5"
+                    ]
+                }
+            </div>
+        </div>
+        <button type="button" onclick="copyState()" class="center">Copy State</button>
+        <br />
+        <span id="text" class="center"></span>
+    </body>
+</html>
