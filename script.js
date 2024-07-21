@@ -39,6 +39,9 @@ function getState(){
 
         stateArray.push(cellState);
     });
+    while (stateArray.length % 4 !== 0) {
+        stateArray.unshift("0");
+    }
     var output = "";
     for (var i = 0; i < stateArray.length / 4; i++) {
         var res = (stateArray[i*4] === "1" ? 1 : 0) * 8
