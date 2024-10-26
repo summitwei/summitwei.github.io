@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Logical Horror</title>
+        <script type="text/javascript" src="../PuzzleJS/puzzlejs/puzzle.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+        <link rel="stylesheet" href="../PuzzleJS/puzzlejs/puzzle.css">
+        
+        <link rel="stylesheet" href="../PuzzleJS/puzzlejs/puzzle-basic-colors.css">
+
+        <style>
+            .center {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                margin-top: 10px;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+            .puzzle-entry .cell.lightblue {
+                background-color: lightblue;
+            }
+
+            .overlapping {
+                display: grid;
+            }
+            .overlapping > * { grid-area: 1 / 1 / 1 / 1; }
+            .overlapping .cell::before { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        </style>
+    </head>
+
+    <body>
+        <div class="overlapping">
+            <div
+            class="puzzle-entry"
+            data-text="9x9"
+            data-mode="notext"
+            data-no-input="true"
+            data-fill-classes="white orange purple lightblue yellow"
+            data-show-commands="true">
+                {
+                    "data-fills": [
+                        "1.....2..",
+                        ".....2...",
+                        "...1...3.",
+                        "5....1...",
+                        ".....7...",
+                        "34.....1.",
+                        ".....3...",
+                        "..4......",
+                        "4........"
+                    ]
+		    }
+	    </div>
+            <div
+            id="puzzle-grid"
+            class="puzzle-entry"
+            data-mode="notext"
+            data-path-style="straight"
+            data-drag-draw-path="true"
+            data-drag-paint-fill="false"
+            data-unselectable-givens="true"
+            data-show-commands="true">
+                {
+                    "data-text": [
+                        "2.....4..",
+                        ".....2...",
+                        "...1...7.",
+                        "5....2...",
+                        ".....7...",
+                        "4......3.",
+                        ".....7...",
+                        ".........",
+			            "........."
+                    ]
+                }
+	    </div>
+        </div>
+        <button type="button" onclick="copyState()" class="center">Copy State</button>
+        <br />
+        <span id="text" class="center"></span>
+    </body>
+</html>
