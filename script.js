@@ -39,9 +39,6 @@ function getState(){
 
         stateArray.push(cellState);
     });
-    while (stateArray.length % 4 !== 0) {
-        stateArray.unshift("0");
-    }
     return stateArray;
 }
 function copyState(){
