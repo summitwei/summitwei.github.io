@@ -19,6 +19,21 @@
                 text-align: center;
             }
 
+            .puzzle-entry .cell.percent25 {
+                background-image: url("percent25.png");
+                background-size: contain;
+            }
+
+            .puzzle-entry .cell.percent50 {
+                background-image: url("percent50.png");
+                background-size: contain;
+            }
+
+            .puzzle-entry .cell.percent75 {
+                background-image: url("percent75.png");
+                background-size: contain;
+            }
+
             .puzzle-entry .cell.lightblue {
                 background-color: lightblue;
             }
@@ -69,7 +84,7 @@
             data-path-style="straight"
             data-drag-draw-path="true"
             data-drag-paint-fill="false"
-            data-fill-classes="white orange purple lightblue yellow"
+            data-fill-classes="white orange purple lightblue percent25 percent50 percent75"
             data-unselectable-givens="false"
             data-show-commands="true">
                 {
@@ -90,9 +105,9 @@
                         "...1...3.",
                         "2....1...",
                         ".....2...",
-                        "34.....1.",
+                        "36.....1.",
                         ".....3...",
-                        "..4......",
+                        "..5......",
                         "4........"
                     ]
                 }
