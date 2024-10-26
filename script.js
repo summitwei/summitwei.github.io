@@ -39,7 +39,11 @@ function getState(){
 
         stateArray.push(cellState);
     });
-    return stateArray;
+    var output = "";
+    for (var i = 0; i < stateArray.length; i++) {
+        output += stateArray[i];
+    }
+    return output;
 }
 function copyState(){
     var state = getState();
