@@ -34,7 +34,7 @@ function getState(){
             hasState = true;
             // cellState = fillIndex.toString(36) + edgeCodeDelta.toString(16) + pathCodeDelta.toString(16) + (spokeCodeDelta >> 4).toString(16) + (spokeCodeDelta % 16).toString(16);
             // if (text) { cellState += "," + text; }
-            cellState = fillIndex.toString(36);
+            cellState = pathCodeDelta.toString(36);
         }
 
         stateArray.push(cellState);
@@ -42,15 +42,7 @@ function getState(){
     while (stateArray.length % 4 !== 0) {
         stateArray.unshift("0");
     }
-    var output = "";
-    for (var i = 0; i < stateArray.length / 4; i++) {
-        var res = (stateArray[i*4] === "1" ? 1 : 0) * 8
-                + (stateArray[i*4+1] === "1" ? 1 : 0) * 4
-                + (stateArray[i*4+2] === "1" ? 1 : 0) * 2
-                + (stateArray[i*4+3] === "1" ? 1 : 0) * 1
-        output += res.toString(16);
-    }
-    return output;
+    return stateArray;
 }
 function copyState(){
     var state = getState();
