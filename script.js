@@ -29,7 +29,7 @@ function getState(){
 
         var text = td.classList.contains("given-text") ? "" : td.querySelector(".text").innerText.trim();
 
-        var cellState = "";
+        var cellState = "0";
         if (fillIndex || edgeCodeDelta || pathCodeDelta || spokeCodeDelta || text) {
             hasState = true;
             // cellState = fillIndex.toString(36) + edgeCodeDelta.toString(16) + pathCodeDelta.toString(16) + (spokeCodeDelta >> 4).toString(16) + (spokeCodeDelta % 16).toString(16);
